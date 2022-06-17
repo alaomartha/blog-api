@@ -1,0 +1,35 @@
+.navbar-nav > li > a {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  line-height: 20px !important;
+}
+.blog{
+  margin-left: 400px;
+}
+.about , .contact{
+  color: lightgray;
+}
+
+form button:hover , .nav-item a:hover{
+  color: black !important;
+}
+form ::placeholder{
+  color: #212529;
+}
+.name input, textarea{
+  outline: none !important;
+  border: none !important;
+  background: #f5f6fa;
+}
+@media(max-width:426){
+  .image img{
+    width: 420px !important;
+  }
+}
+
+.foooter{
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  background: #cec9c9;
+}
