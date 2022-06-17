@@ -65,7 +65,7 @@ function createPost(e){
   .then((data)=> {
     console.log('post' , data);
     console.log(yourPost);
-    yourPost.push(data);
+    yourPost.unshift(data);
     console.log(yourPost);
     let postLayout = document.querySelector('#post-layout');
 
@@ -131,8 +131,6 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
   })
   })
 };
-  
-
 
 // to view
 
