@@ -156,33 +156,32 @@ function deletePost(id){
   .then((data)=> {
     console.log('post' , data);
     console.log('user' , yourPost);
-    // yourPost.pop(data);
-    yourPost.splice((id -1) , 1);
-
-    console.log(yourPost)
-    let postBody = "";
-  yourPost.forEach(e => {
-    // console.log(element)
-    postBody += `<div class="col-md-4 mb-3">
-    <div class="card h-100">
-      <div class="card-body">
-        <div class = "d-flex justify-content-end">
-          <h6 class = "text-danger">${e.id}</h6>
-        </div>
-        <h5 class="post-heading mb-4">${e.title}</h5>
-        <p class="your-experience">${e.body}</p>
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-danger" onclick="deletePost(${e.id})">Delete</button>
-          <button class="btn btn-primary" onclick="openNewPage(${e.id})">View</button>
-          <button class="btn btn-warning" onClick="updatePost(${e.id})">Update</button>
-        </div>
-      </div>
-    </div>
-  </div>`
-  let postLayout = document.querySelector('#post-layout');
-  postLayout.innerHTML = postBody;
-    // alert('Post Created');
+    yourPost = yourPost.filter((post) => post.id !== id);
+    console.log(yourPost);
+    renderUI(yourPost);
   });
-  })
 }
   
+function renderUI(arr) {
+  let postBody = "";
+  arr.forEach((e) => {
+    postBody += `
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                              <p>${e.id}</p>
+                              <h5 class="post-title">${e.title}</h5>
+                              <p class="post-body">${e.body}</p>
+                            </div>
+                            <div class="d-flex justify-content-around mb-5">
+                              <button class="btn btn-primary" id="view-btn" onclick="openNewPage(${e.id})">view</button>
+                              <button class="btn btn-warning" onclick="updatePost(${e.id})">Update</button>
+                              <button class="btn btn-danger" onclick="deletePost(${e.id})">Delete</button>
+                          </div>
+                        </div>
+                    </div>
+                `;
+  });
+  let postLayout = document.querySelector('#post-layout');
+  postLayout.innerHTML = postBody;
+}

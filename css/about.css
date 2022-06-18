@@ -3,13 +3,9 @@
   padding-bottom: 10px !important;
   line-height: 20px !important;
 }
-.blog{
-  margin-left: 400px;
-}
 .about , .contact{
   color: lightgray;
-}
-
+} 
 .bi-arrow-right{
   margin-top: -15px;
 }
@@ -24,16 +20,12 @@
   margin-top: -10px;
   font-size: 30px;
 }
-.about-me i{
-  font-size:20px;
-}
 .about-me:hover{
   background: black;
   color: white;
   padding: 20px;
   opacity: 0.7;
 }
-
 form{
   padding: 40px;
 }
@@ -48,10 +40,6 @@ form{
   font-weight: 400;
   background: #cec9c9;
 }
-
 .icon-links .bi-arrow-right{
   margin-top: 17px;
-}
-.links:hover{
-  color: rgb(214, 214, 22);
 }

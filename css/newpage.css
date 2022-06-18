@@ -3,16 +3,31 @@
   padding-bottom: 10px !important;
   line-height: 20px !important;
 }
-.blog{
-  margin-left: 400px;
-}
 .about , .contact{
   color: lightgray;
 }
 .arrow{
+  width: 80px;
+}
+.btn{
+  padding: 10px 25px;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin-top: 20px;
+  outline: none;
+  cursor: pointer;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.btn:hover{
   background: black;
-  width: 40px;
-  text-align: center!important;
+  color: white!important;
+  opacity: 0.8;
 }
 .foooter{
   font-size: 16px;
