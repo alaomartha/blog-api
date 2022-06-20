@@ -12,7 +12,7 @@ function getPosts() {
   fetch('https://jsonplaceholder.typicode.com/posts')
   .then(response => response.json())
   .then((data)=> {
-    console.log(data);
+    // console.log(data);
     let postLayout = document.querySelector('#post-layout');
     yourPost = data;
   // console.log(yourPost);
@@ -46,7 +46,7 @@ getPosts();
 // to create posts
 
 function createPost(e){
-  e.preventDefault();   // to prevent the page from refreshing
+  e.preventDefault(); 
   let title = businessTitle.value;
   let body = yourExperience.value;
   console.log('Post Title' , title);
@@ -63,10 +63,10 @@ function createPost(e){
   })
   .then((response) => response.json())
   .then((data)=> {
-    console.log('post' , data);
-    console.log(yourPost);
+    // console.log('post' , data);
+    // console.log(yourPost);
     yourPost.unshift(data);
-    console.log(yourPost);
+    // console.log(yourPost);
     let postLayout = document.querySelector('#post-layout');
 
     let postBody = "";
@@ -118,7 +118,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
     // let postHeading = document.querySelector('.post-heading');
   let postHeadings = document.querySelectorAll('.post-heading');
   let yourExperiences = document.querySelectorAll('.your-experience');
-  console.log(postHeadings);
+  // console.log(postHeadings);
   postHeadings.forEach((postHeading , index) => {
     if (index + 1 === id){
       postHeading.innerHTML = data.title;
@@ -138,7 +138,7 @@ function openNewPage(id) {
   fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data)
+    // console.log(data)
     localStorage.setItem('viewedPost', JSON.stringify(data));
     window.location.href = 'newpage.html'
 });
@@ -154,15 +154,15 @@ function deletePost(id){
   // postBox = postBox.filter(post => post.id !== id);
   .then((response) => response.json())
   .then((data)=> {
-    console.log('post' , data);
-    console.log('user' , yourPost);
+    // console.log('post' , data);
+    // console.log('user' , yourPost);
     yourPost = yourPost.filter((post) => post.id !== id);
-    console.log(yourPost);
-    renderUI(yourPost);
+    // console.log(yourPost);
+    toDelete(yourPost);
   });
 }
   
-function renderUI(arr) {
+function toDelete(arr) {
   let postBody = "";
   arr.forEach((e) => {
     postBody += `
